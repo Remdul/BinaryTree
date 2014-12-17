@@ -4,26 +4,27 @@
 #include <time.h>
 #include "BinaryTree.h"
 
-struct Node{
+class Node{
+public:
+	Node(){}
+	Node(int newdata);
 	int data;
 	Node *left;
 	Node *right;
 };
 
-Node* newNode(int data)
+Node::Node(int newdata)
 {
-	Node* newNode = new Node();
-	newNode->data = data;
-	newNode->left = NULL;
-	newNode->right = NULL;
-	return newNode;
+	data = newdata;
+	left = NULL;
+	right = NULL;
 }
 
 Node* insert(Node* root, int data)
 {
 	if (root == NULL)
 	{
-		root = newNode(data);
+		root = new Node(data);
 		return root;
 	}
 	else if (data <= root->data)
@@ -42,7 +43,7 @@ bool search(Node* root, int data)
 	{
 		return false;
 	}
-	else if (root->data = data)
+	else if (root->data == data)
 	{
 		return true;
 	}
@@ -56,7 +57,7 @@ bool search(Node* root, int data)
 	}
 }
 
-int main(int argc, char* argv[]) 
+int main(int argc, char* argv[])
 {
 	srand(time(NULL));
 	Node* rootPtr = NULL;
