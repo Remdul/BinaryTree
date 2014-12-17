@@ -57,7 +57,7 @@ bool search(Node* root, int data)
 	}
 }
 
-int main(int argc, char* argv[])
+int main(int argc, char* argv[]) 
 {
 	srand(time(NULL));
 	Node* rootPtr = NULL;
