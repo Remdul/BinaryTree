@@ -10,6 +10,7 @@ struct Node{
 	Node *right;
 };
 
+//this should be a constructor for Node
 Node* newNode(int data)
 {
 	Node* newNode = new Node();
@@ -42,6 +43,7 @@ bool search(Node* root, int data)
 	{
 		return false;
 	}
+	//Use comparison operator
 	else if (root->data = data)
 	{
 		return true;
